@@ -78,19 +78,19 @@ def send_messege_to_issue(issue_number: int):
     data = find_embeddings(target_issue_embedding, embeddings, ids, 0.7)
     data = data[:3]
 
+    if not len(data):
+        return
+
     send_text = '重複を検出しました。\n\n'
 
     for issue_id in data:
-        print(issue_id['val'])
         find_data = next(filter(lambda x: x.id == issue_id['id'], res), None)
         if find_data:
             print(find_data.number)
             print(find_data.title)
-
             send_text += f'#{find_data.number} {find_data.title}\n'
 
-    if len(data):
-        app.send_comment(issue_number, send_text)
+    app.send_comment(issue_number, send_text)
 
 
 if __name__ == "__main__":
