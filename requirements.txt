@@ -1,0 +1,5 @@
+jwt
+requests
+pytest
+dotenv
+openai==1.35.12
