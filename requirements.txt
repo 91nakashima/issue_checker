@@ -1,5 +1,5 @@
 jwt
 requests
 pytest
-dotenv
+python-dotenv
 openai==1.35.12
