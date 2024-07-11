@@ -10,3 +10,11 @@
   ```
 
 - XXXXXX.private-key.pem を作成
+
+# 実行
+
+```bash
+$ python main.py --issue 1111
+
+$ python main.py --issue 1111 --repo XXXX
+```
